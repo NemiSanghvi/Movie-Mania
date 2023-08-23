@@ -48,14 +48,15 @@ const ContextBody = () => {
             <InfoSubRow>
               <InfoSubRowsColumn>
                 <Font2>Titanic vs Avatar</Font2>
-                <Font2>2021</Font2>
+                <Font2>92%</Font2>
               </InfoSubRowsColumn>
               <InfoSubRowsColumn>
                 <Font2>The Dark Knight vs Interception</Font2>
-                <Font2>2020</Font2>
+                <Font2>80%</Font2>
               </InfoSubRowsColumn>
               <InfoSubRowsColumn>
-                <Font2>Pulp Fiction vs The Shawshank Redemption</Font2>
+                <Font2>Oppenhiemer vs Barbie</Font2>
+                <Font2>67%</Font2>
               </InfoSubRowsColumn>
             </InfoSubRow>
           </InfoRow2>

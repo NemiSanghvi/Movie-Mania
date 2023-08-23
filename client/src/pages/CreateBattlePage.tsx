@@ -1,59 +1,120 @@
-import MovieCard from "../components/MovieCard";
-import { useState } from "react";
-import { Search } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import { queryMovie } from "../services/api";
+import React, { useState } from "react";
+import SearchBar from "../components/SearchBar";
 import { Movie } from "../services/types";
+import MovieCard from "../components/MovieCard";
+import { Cross, PlusIcon, RefreshCcw, X } from "lucide-react";
 
-const CreateBattlePage = () => {
-  const [movieQuery, setMovieQuery] = useState("");
-  const {
-    data: movieList,
-    isLoading,
-    error,
-  } = useQuery<Movie[]>(["search", movieQuery], () => queryMovie(movieQuery), {
-    enabled: !!movieQuery,
-  });
+const CreateBattlePage: React.FC = () => {
+  const [isSearchBarOpen1, setIsSearchBarOpen1] = useState(false);
+  const [isSearchBarOpen2, setIsSearchBarOpen2] = useState(false);
+  const [selectedMovie1, setSelectedMovie1] = useState<Movie | null>(null);
+  const [selectedMovie2, setSelectedMovie2] = useState<Movie | null>(null);
+
+  const openSearchBar1 = () => {
+    setIsSearchBarOpen1(true);
+  };
+
+  const openSearchBar2 = () => {
+    setIsSearchBarOpen2(true);
+  };
+
+  const closeSearchBar1 = () => {
+    setIsSearchBarOpen1(false);
+  };
+
+  const closeSearchBar2 = () => {
+    setIsSearchBarOpen2(false);
+  };
+
+  const handleSelectMovie1 = (movie: Movie) => {
+    setSelectedMovie1(movie);
+    closeSearchBar1();
+  };
+
+  const handleSelectMovie2 = (movie: Movie) => {
+    setSelectedMovie2(movie);
+    closeSearchBar2();
+  };
 
   return (
-    <div>
-      <div className="bg-red-600">
-        <div className="flex justify-center items-center p-8">
-          <div className="p-5">
-            <Search color="grey" size={36} />
-          </div>
-          <input
-            className="text-[#e63946] bg-[#457b9d] font-bold text-3xl font-mono p-5 rounded-full w-[50rem] items-center"
-            placeholder="Barbie"
-            value={movieQuery}
-            onChange={(e) => setMovieQuery(e.target.value)}
+    <>
+      <div className="h-[35rem] flex items-center justify-center bg-[#457b9d]">
+        {(isSearchBarOpen1 || isSearchBarOpen2) && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-10"
+            onClick={isSearchBarOpen1 ? closeSearchBar1 : closeSearchBar2}
           />
-        </div>
-        {isLoading && !!movieQuery? (
-          <div>Loading...</div>
-        ) : error ? (
-          <div>Error</div>
-        ) : Array.isArray(movieList) && movieList.length > 0 ? (
-          <div className="flex justify-center bg-green-600 items-center">
-            <ul>
-              {movieList.map((movie) => (
-                <li key={movie.id} className="p-5">{movie.title}</li>
-              ))}
-            </ul>
+        )}
+
+        {isSearchBarOpen1 && (
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+            <SearchBar
+              onClose={closeSearchBar1}
+              onSelectMovie={handleSelectMovie1}
+            />
           </div>
-        ) : movieQuery ?(
-          <div>No results found.</div>
+        )}
+
+        {isSearchBarOpen2 && (
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+            <SearchBar
+              onClose={closeSearchBar2}
+              onSelectMovie={handleSelectMovie2}
+            />
+          </div>
+        )}
+
+        {selectedMovie1 ? (
+          <div className="">
+            <MovieCard movie={selectedMovie1} />
+            <div
+              className="p-4 flex items-center justify-center"
+              onClick={openSearchBar1}
+            >
+              <RefreshCcw />
+            </div>
+          </div>
         ) : (
-          <></>
+          <div onClick={openSearchBar1}>
+            <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-60 cursor-pointer">
+              <div className="w-full h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
+                <Cross size={50} color="rgb(229 231 235)" />
+              </div>
+              <h1 className="text-xl font-semibold h-14 overflow-hidden mb-2 break-words">
+                Click to Choose a Movie
+              </h1>
+            </div>
+          </div>
+        )}
+        <span className="mx-4 font-extrabold text-700 text-4xl text-red-800">
+          V/S
+        </span>
+
+        {selectedMovie2 ? (
+          <div className="">
+            <MovieCard movie={selectedMovie2} />
+            <div
+              className="p-4 flex items-center justify-center"
+              onClick={openSearchBar2}
+            >
+              <RefreshCcw />
+            </div>
+          </div>
+        ) : (
+          <div onClick={openSearchBar2}>
+            <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-60 cursor-pointer">
+              <div className="w-full h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
+                <Cross size={50} color="rgb(229 231 235)" />
+              </div>
+
+              <h1 className="text-xl font-semibold h-14 overflow-hidden mb-2 break-words">
+                Click to Choose a Movie
+              </h1>
+            </div>
+          </div>
         )}
       </div>
-
-      <div className="flex flex-row justify-center">
-        <div>Card 1</div>
-        <span>VS</span>
-        <div>Card 2</div>
-      </div>
-    </div>
+    </>
   );
 };
 
