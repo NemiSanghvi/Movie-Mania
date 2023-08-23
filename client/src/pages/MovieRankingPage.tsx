@@ -19,8 +19,8 @@ const MovieRankingPage = () => {
   if (errorMovieList) return <p>Error fetching movie list</p>;
 
   return (
-    <div className="bg-slate-800 p-8">
-      <h2 className="flex justify-center items-center font-bold text-6xl font-satoshi">Top Movies to Watch Right Now!!</h2>
+    <div className="bg-[#457b9d] p-8">
+      <h2 className="flex justify-center items-center font-extrabold text-6xl font-epic">Top Movies to Watch Right Now!!</h2>
       {movieList ? (
         movieList.map((movie: MovieID) => (
           <MovieCard2 movieId={movie.movie_id}/>

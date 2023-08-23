@@ -36,7 +36,7 @@ const MovieCard2: React.FC<MovieCardProp2> = ({ movieId }) => {
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold text-white">{movieDetails?.title}</h2>
           <p className="mb-2 text-slate-300">{movieDetails?.overview}</p>
-          <p className="text-gray-500">
+          <p className="text-gray-300">
             Genres: {movieDetails.genres.map((genre) => genre.name).join(", ")}
           </p>
         </div>

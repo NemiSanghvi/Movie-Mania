@@ -5,7 +5,6 @@ const apiKey = import.meta.env.VITE_TMDB_API_KEY; // Replace with your actual TM
 
 
 const MovieCard: React.FC<MovieProp> = ({ movie }) => {
-  console.log(movie);
   return (
     <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-60">
       <img
