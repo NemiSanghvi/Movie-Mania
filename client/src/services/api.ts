@@ -36,6 +36,13 @@ const getMovieId = async () => {
   return movieList;
 };
 
+const getBattles = async() => {
+  const response = await axios.get("http://localhost:3030/api/arena-battles");
+
+  const battles = response.data;
+
+  return battles;
+} 
 const queryMovie = async (movieQuery: string) => {
   try {
     const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieQuery}`);
@@ -47,4 +54,4 @@ const queryMovie = async (movieQuery: string) => {
   }
 };
 
-export { getRandomMovies, getMovieDetails, getMovieId, queryMovie };
+export { getRandomMovies, getMovieDetails, getMovieId, queryMovie, getBattles };

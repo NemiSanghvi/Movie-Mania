@@ -7,6 +7,7 @@ import MovieRankingPage from "./pages/MovieRankingPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CreateBattlePage from "./pages/CreateBattlePage";
+import BattleArenaPage from "./pages/BattleArenaPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetailsPage />} />
           <Route path="/preferred-movies" element={<MovieRankingPage />}/>
           <Route path="/create-battle" element={<CreateBattlePage />} />
+          <Route path="/battle-arena" element={<BattleArenaPage />} />
         </Routes>
         <Footer />
       </Router>
