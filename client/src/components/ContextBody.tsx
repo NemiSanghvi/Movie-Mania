@@ -36,12 +36,11 @@ const ContextBody = () => {
         </Wrapper>
       </CallToAction>
       <Wrapper2>
-        <Title2 className="">Hollywood's Greatest Face-offs</Title2>
+        <Title2>Hollywood's Greatest Face-offs</Title2>
         <InfoColumn>
           <InfoRow1>
             <Font2>
-              Discover the ultimate match-ups that have occurred within our
-              legendary ranking system.
+              Discover the ultimate match-ups that have occurred within the community of Movie Mania.
             </Font2>
           </InfoRow1>
           <InfoRow2>

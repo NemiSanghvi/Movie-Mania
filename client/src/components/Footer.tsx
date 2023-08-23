@@ -14,7 +14,7 @@ const Footer = () => {
               Open source project . Feel free to contribute.
             </span>
           </Font2>{" "}
-          <a href="https://github.com/RaiYashPramod/movie_battle_royal" rel="noreffer noopenner" target="_blank"><img src={githubIcon} alt="GITHUB"/></a>
+          <a href="https://github.com/RaiYashPramod/MM_Client" rel="noreffer noopenner" target="_blank"><img src={githubIcon} alt="GITHUB"/></a>
         </CopyWrite>
       </FooterBg>
     </>
