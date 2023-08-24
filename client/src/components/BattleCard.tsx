@@ -3,18 +3,21 @@ import { getMovieDetails } from "../services/api";
 import { MovieDetails } from "../services/types";
 import { Link } from "react-router-dom";
 
-const BattleCard: React.FC<{ movieId1: number; movieId2: number }> = ({
+const BattleCard: React.FC<{ movieId1: number; movieId2: number, battleID: number }> = ({
   movieId1,
   movieId2,
+  battleID
 }) => {
-  const { data: movieData1, isLoading: isLoading1, error: error1 } = useQuery(
-    ["movie", movieId1],
-    () => getMovieDetails(movieId1)
-  );
-  const { data: movieData2, isLoading: isLoading2, error: error2 } = useQuery(
-    ["movie", movieId2],
-    () => getMovieDetails(movieId2)
-  );
+  const {
+    data: movieData1,
+    isLoading: isLoading1,
+    error: error1,
+  } = useQuery(["movie", movieId1], () => getMovieDetails(movieId1));
+  const {
+    data: movieData2,
+    isLoading: isLoading2,
+    error: error2,
+  } = useQuery(["movie", movieId2], () => getMovieDetails(movieId2));
 
   if (isLoading1 || isLoading2)
     return (
@@ -38,14 +41,18 @@ const BattleCard: React.FC<{ movieId1: number; movieId2: number }> = ({
             className="w-24 h-32 object-cover rounded-md"
           />
           <div className="border-l-4 border-red-600 pl-4">
-            <p className="font-bold text-xl text-white">{movie1Details?.title}</p>
+            <p className="font-bold text-xl text-white">
+              {movie1Details?.title}
+            </p>
             {/* <p className="text-gray-400">{movie1Details?.overview}</p> */}
           </div>
         </div>
         <div className="w-2 h-40 bg-gradient-to-b from-red-600 to-red-800 transform -skew-x-12"></div>
         <div className="flex items-center space-x-4">
           <div className="border-r-4 border-red-600 pr-4">
-            <p className="font-bold text-xl text-white">{movie2Details?.title}</p>
+            <p className="font-bold text-xl text-white">
+              {movie2Details?.title}
+            </p>
             {/* <p className="text-gray-400">{movie2Details?.overview}</p> */}
           </div>
           <img
@@ -57,7 +64,7 @@ const BattleCard: React.FC<{ movieId1: number; movieId2: number }> = ({
       </div>
       <div className="mt-4">
         <Link
-          to={`/battle/${movieId1}/${movieId2}`}
+          to={`/arena/battle/${battleID}`}
           className="text-red-600 hover:underline"
         >
           Join the Epic Battle! Express Your Opinion and see opinions of others.

@@ -20,7 +20,8 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetailsPage />} />
           <Route path="/preferred-movies" element={<MovieRankingPage />}/>
           <Route path="/create-battle" element={<CreateBattlePage />} />
-          <Route path="/battle-arena" element={<BattleArenaPage />} />
+          <Route path="/arena" element={<BattleArenaPage />} />
+          <Route path="/arena/battle/:id-id" />
         </Routes>
         <Footer />
       </Router>

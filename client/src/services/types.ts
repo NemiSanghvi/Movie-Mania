@@ -30,6 +30,7 @@ export interface MovieDetails {
   overview: string;
   genres: Genre[];
   poster_path: string
+  backdrop_path: string;
 }
 
 export interface MovieDetailsPageType {

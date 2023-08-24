@@ -9,7 +9,7 @@ const Navbar = () => {
           <a href="/battle-ground" className="text-[#e63946] text-xl font-semibold hover:border-b-2 hover:border-[#e63946]">Battle Ground</a>
           <a href="/preferred-movies" className="text-[#e63946] text-xl font-semibold hover:border-b-2 hover:border-[#e63946]">What to watch</a>
           <a href="/create-battle" className="text-[#e63946] text-xl font-semibold hover:border-b-2 hover:border-[#e63946]">Create Battle's</a>
-          <a href="/battle-arena" className="text-[#e63946] text-xl font-semibold hover:border-b-2 hover:border-[#e63946]">Arena</a>
+          <a href="/arena" className="text-[#e63946] text-xl font-semibold hover:border-b-2 hover:border-[#e63946]">Arena</a>
         </div>
       </div>
     </>
