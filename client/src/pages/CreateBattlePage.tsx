@@ -56,7 +56,10 @@ const CreateBattlePage: React.FC = () => {
       } else {
         console.log("Something went wrong while creating battle");
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log("Error while Creating Battle")
+      throw error
+    }
   };
 
   return (
@@ -65,7 +68,7 @@ const CreateBattlePage: React.FC = () => {
         <div className="h-[35rem] flex items-center justify-center">
           {(isSearchBarOpen1 || isSearchBarOpen2) && (
             <div
-              className="fixed inset-0 bg-black opacity-50 z-10"
+              className="fixed inset-0 bg-gray z-10 bg-opacity-60 backdrop-blur-lg"
               onClick={isSearchBarOpen1 ? closeSearchBar1 : closeSearchBar2}
             />
           )}
@@ -100,8 +103,8 @@ const CreateBattlePage: React.FC = () => {
             </div>
           ) : (
             <div onClick={openSearchBar1}>
-              <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-60 cursor-pointer">
-                <div className="w-full h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
+              <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-full cursor-pointer">
+                <div className="w-full h-52 sm:h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
                   <Cross size={50} color="rgb(229 231 235)" />
                 </div>
                 <h1 className="text-xl font-semibold h-14 overflow-hidden mb-2 break-words">
@@ -126,8 +129,8 @@ const CreateBattlePage: React.FC = () => {
             </div>
           ) : (
             <div onClick={openSearchBar2}>
-              <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-60 cursor-pointer">
-                <div className="w-full h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
+              <div className="bg-gray-200 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow w-full cursor-pointer">
+                <div className="w-full h-52 sm:h-64 bg-gray-300 rounded-md mb-4 flex justify-center items-center">
                   <Cross size={50} color="rgb(229 231 235)" />
                 </div>
 

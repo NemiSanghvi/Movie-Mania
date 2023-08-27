@@ -33,7 +33,7 @@ const BattleCard: React.FC<{ movieId1: number; movieId2: number, battleID: numbe
 
   return (
     <div className="bg-gray-900 rounded-md shadow-lg p-4 m-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:justify-between">
         <div className="flex items-center space-x-4">
           <img
             src={`https://image.tmdb.org/t/p/w300${movie1Details?.poster_path}`}
@@ -47,8 +47,8 @@ const BattleCard: React.FC<{ movieId1: number; movieId2: number, battleID: numbe
             {/* <p className="text-gray-400">{movie1Details?.overview}</p> */}
           </div>
         </div>
-        <div className="w-2 h-40 bg-gradient-to-b from-red-600 to-red-800 transform -skew-x-12"></div>
-        <div className="flex items-center space-x-4">
+        <div className="w-2 h-11 bg-gradient-to-b from-red-600 to-red-800 transform rotate-90 self-center"></div>
+        <div className="flex items-center space-x-4 justify-end">
           <div className="border-r-4 border-red-600 pr-4">
             <p className="font-bold text-xl text-white">
               {movie2Details?.title}

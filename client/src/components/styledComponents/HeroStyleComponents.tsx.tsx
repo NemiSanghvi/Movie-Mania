@@ -17,6 +17,11 @@ export const BlueBg = styled.div`
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 3.125rem 1.25rem; /* Adjust as needed */
+  }
 `;
 
 export const RedBg = styled.div`
@@ -39,6 +44,13 @@ export const RedBg = styled.div`
   gap: 3.125rem; /* 50px */
   border-radius: 0;
   border: 0.625rem solid #F1FAEE;
+
+  @media (max-width: 768px) {
+    flex: 1 0 0;
+    width: 100%;
+    max-width: none;
+    padding: 3.125rem 1.25rem; /* Adjust as needed */
+  }
 `;
 
 export const EpicTitle = styled.div`
@@ -78,6 +90,11 @@ export const SubText = styled.div`
   line-height: 1.5;
   text-align: center;
   padding: 1.875rem; /* 30px */
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; /* Adjust as needed */
+    padding: 1rem 1.25rem; /* Adjust as needed */
+  }
 `;
 
 export const Text = styled.div`
@@ -97,6 +114,10 @@ export const Text = styled.div`
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    padding: 0.125rem 0.25rem; /* Adjust as needed */
+  }
 `;
 
 export const Column = styled.div`
@@ -115,6 +136,12 @@ export const Column = styled.div`
   flex-wrap: nowrap;
   gap: 3.125rem; /* 50px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    gap: 1.25rem; /* Adjust gap for smaller screens */
+    padding: 1.875rem 1.25rem; /* Adjust padding for smaller screens */
+    flex-direction: column;
+  }
 `;
 
 export const Title2 = styled.div`
@@ -136,6 +163,14 @@ export const Title2 = styled.div`
   line-height: 1.2;
   text-align: left;
   padding-right: 3.125rem; /* 50px */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: none;
+    flex: 0;
+    font-size: 2rem; /* Adjust as needed */
+    padding: 0 1.25rem; /* Adjust as needed */
+  }
 `;
 
 export const Title2SubText = styled.div`
@@ -156,4 +191,12 @@ export const Title2SubText = styled.div`
   letter-spacing: 0em;
   line-height: 1.5;
   text-align: left;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: none;
+    flex: 0;
+    font-size: 1rem; /* Adjust as needed */
+    padding: 0 1.25rem; /* Adjust as needed */
+  }
 `;

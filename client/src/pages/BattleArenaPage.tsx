@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getBattles } from '../services/api'
 import BattleCard from '../components/BattleCard';
+import { Battle } from '../services/types';
 
 const BattleArenaPage = () => {
   const { data: battles, isLoading, error } = useQuery(['battles'], () => getBattles())
@@ -12,7 +13,7 @@ const BattleArenaPage = () => {
   return (
     <div className='bg-[#457b9d] p-5'>
       {battles.length > 0 ? (
-        battles.map((battle: any) => (
+        battles.map((battle: Battle) => (
           <div key={battle.id}>
             {/* <MovieCard2 movieId={battle.movie1Id} />
             <MovieCard2 movieId={battle.movie2Id} /> */}

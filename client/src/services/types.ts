@@ -45,3 +45,9 @@ export interface MovieDetailsPageType {
   status: string;
   imdb_id: string;
 }
+
+export interface Battle {
+  id:number;
+  movie1Id: number;
+  movie2Id: number
+}

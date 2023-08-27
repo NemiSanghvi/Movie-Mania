@@ -74,14 +74,14 @@ const MovieBattlePage = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center w-auto h-[44.6rem] bg-[#457b9d]">
-      <div className="font-extrabold text-7xl mb-10 text-slate-300">
+    <div className="flex flex-col justify-center items-center h-[44.6rem] bg-[#457b9d] w-fit sm:w-[100%]">
+      <div className="font-extrabold text-5xl sm:text-7xl mb-10 text-slate-300">
         Battle-Royal
       </div>
       <div className="flex flex-row justify-center items-center">
         {selectedMovies.length === 2 ? (
           <>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full ">
               <div
                 onClick={() =>
                   handlePreferedMovie(selectedMovies[0], selectedMovies[1])
@@ -97,7 +97,7 @@ const MovieBattlePage = () => {
             <span className="mx-4 font-extrabold text-700 text-4xl text-red-800">
               V/S
             </span>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full md:w-[50%] lg:w-[40%]">
               <div
                 onClick={() =>
                   handlePreferedMovie(selectedMovies[1], selectedMovies[0])

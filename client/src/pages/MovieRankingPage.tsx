@@ -20,7 +20,7 @@ const MovieRankingPage = () => {
 
   return (
     <div className="bg-[#457b9d] p-8">
-      <h2 className="flex justify-center items-center font-extrabold text-6xl font-epic">Top Movies to Watch Right Now!!</h2>
+      <h2 className="flex justify-center items-center font-extrabold text-3xl sm:text-7xl font-epic text-[#e63946] p-5">Top Movies to Watch Right Now!!</h2>
       {movieList ? (
         movieList.map((movie: MovieID) => (
           <MovieCard2 movieId={movie.movie_id}/>

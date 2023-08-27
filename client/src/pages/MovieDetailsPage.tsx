@@ -5,10 +5,8 @@ import { MovieDetailsPageType } from "../services/types";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
-  if(!id) {
-    return (
-      <div>This movie doen't exist!</div>
-    )
+  if (!id) {
+    return <div>This movie doesn't exist!</div>;
   }
   const movie_id = parseInt(id);
   const { data, isLoading, error } = useQuery([movie_id?.toString()], () =>
@@ -42,50 +40,42 @@ const MovieDetailsPage = () => {
   }
 
   return (
-    <>
+    <div className="bg-gray-900 text-white">
       <div
-        className="absolute top-0 left-0 w-full h-full bg-slate-600 bg-opacity-60 backdrop-blur-lg"
+        className="h-[300px] lg:h-[500px] bg-cover bg-center"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`,
-          backgroundSize: "cover",
-          filter: "blur(5px)",
         }}
       ></div>
-      <div className="text-white">
-        <div className="flex pl-20 pr-20 h-[21rem] relative">
+      <div className="p-4 lg:p-12">
+        <div className="flex items-center mb-4">
           <img
             src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
             alt={`${movieData.title} Poster`}
-            className="w-60 h-[24rem] object-contain relative z-10 ml-[3rem]"
+            className="w-28 h-auto rounded-md shadow-lg mr-4"
           />
-          {/* <img
-            src={`https://image.tmdb.org/t/p/w1280${movieData.backdrop_path}`}
-            alt={`${movieData.title} Backdrop`}
-            className="w-full h-auto object-fit mt-2"
-          /> */}
-        </div>
-        <div className="flex flex-col p-10 mx-16 bg-slate-700 bg-opacity-40 backdrop-blur-md">
-          <h1 className="text-3xl font-semibold mb-2">{movieData.title}</h1>
-          <span className="text-lg mb-2">{movieData?.tagline}</span>
-          <p className="mb-1">
-            {movieData?.runtime} mins |{" "}
-            {movieData?.genres.map((genre) => genre.name).join(", ")}
-          </p>
-          <p className="mb-2">Release Date: {movieData.release_date}</p>
-          <p className="">{movieData.overview}</p>
-          <div className="px-16">
-            <a
-              rel="noopener nonrefferer"
-              target="_blank"
-              href={`https://www.imdb.com/title/${movieData?.imdb_id}/`}
-              className="block px-8 py-2 bg-yellow-500 rounded-full text-center mt-4 text-black"
-            >
-              For Additional Info, Check out IMDB
-            </a>
+          <div>
+            <h1 className="text-2xl lg:text-4xl font-semibold mb-2">{movieData.title}</h1>
+            <p className="text-sm text-gray-300">{movieData?.tagline}</p>
           </div>
         </div>
+        <p className="text-gray-300 mb-2">
+          {movieData?.runtime} mins |{" "}
+          {movieData?.genres.map((genre) => genre.name).join(", ")}
+        </p>
+        <p className="text-sm">{movieData.overview}</p>
+        <div className="mt-6">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`https://www.imdb.com/title/${movieData?.imdb_id}/`}
+            className="px-6 py-2 bg-yellow-500 rounded-full text-center text-black text-sm"
+          >
+            For Additional Info, Check out IMDB
+          </a>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const BattlePageLoading = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-slate-700">
+    <div className="flex flex-col justify-center items-center h-screen bg-[#457b9d]">
       <div className="font-extrabold text-7xl mb-10 text-slate-300">
         <Skeleton width={300} height={70} />
       </div>

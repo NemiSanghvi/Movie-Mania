@@ -10,7 +10,7 @@ export const HypeConatainer = styled.div`
   justify-content: center;
   align-items: center;
   /* padding: 6.25rem; */ /* Commented out since it's not in rem */
-  mix-blend-mode: luminosity;
+  /* mix-blend-mode: luminosity; */
   background-color: #000000;
   min-height: 50rem; /* 800px */
   overflow: hidden;
@@ -19,9 +19,13 @@ export const HypeConatainer = styled.div`
   flex-wrap: nowrap;
   gap: 1.25rem; /* 20px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    min-height: 20rem; /* Adjust min-height for smaller screens */
+  }
 `;
 
-export const BackgroundImg = styled.image` /* Changed "image" to "img" */
+export const BackgroundImg = styled.div` /* Changed "image" to "img" */
   box-sizing: border-box;
   flex-shrink: 0;
   width: auto;
@@ -34,6 +38,12 @@ export const BackgroundImg = styled.image` /* Changed "image" to "img" */
   background-position: center;
   position: absolute;
   border-radius: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const Title = styled.div`
@@ -55,4 +65,8 @@ export const Title = styled.div`
   letter-spacing: 0em;
   line-height: 1.1;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
 `;

@@ -17,6 +17,10 @@ export const QuestionareContainer = styled.div`
   flex-wrap: nowrap;
   gap: 3.75rem; /* 60px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 export const Title = styled.div`
@@ -37,6 +41,10 @@ export const Title = styled.div`
   letter-spacing: 0em;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
 `;
 
 export const QuestionsRow = styled.div`
@@ -55,6 +63,11 @@ export const QuestionsRow = styled.div`
   flex-wrap: nowrap;
   gap: 6.25rem; /* 100px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    gap: 1rem; /* Adjust gap for smaller screens */
+    flex-direction: column;
+  }
 `;
 
 export const QandA = styled.div`
@@ -74,6 +87,12 @@ export const QandA = styled.div`
   flex-wrap: nowrap;
   gap: 1.5625rem; /* 25px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    gap: 1rem; 
+    width: auto;
+    padding-bottom: 2rem;
+  }
 `;
 
 export const AnswerFont = styled.div`
@@ -97,4 +116,8 @@ export const AnswerFont = styled.div`
   text-align: left;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
 `;

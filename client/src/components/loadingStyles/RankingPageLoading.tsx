@@ -3,12 +3,12 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const RankingPageLoading = () => {
   return (
-    <div className="bg-slate-800 p-8">
+    <div className="bg-[#457b9d] p-8">
       <h2 className="flex justify-center items-center">
         <Skeleton width={500} height={90} duration={1.5} />
       </h2>
       <div className="gap-4 ">
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 12 }).map((_,index) => (
           <div
             key={index}
             className="flex bg-slate-700 bg-opacity-40 backdrop-blur-md border p-4 m-4"

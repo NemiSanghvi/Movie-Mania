@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CreateBattlePage from "./pages/CreateBattlePage";
 import BattleArenaPage from "./pages/BattleArenaPage";
+import BattleDetailsPage from "./pages/BattleDetailsPage";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/preferred-movies" element={<MovieRankingPage />}/>
           <Route path="/create-battle" element={<CreateBattlePage />} />
           <Route path="/arena" element={<BattleArenaPage />} />
-          <Route path="/arena/battle/:id-id" />
+          <Route path="/arena/battle/:id" element={<BattleDetailsPage />} />
         </Routes>
         <Footer />
       </Router>

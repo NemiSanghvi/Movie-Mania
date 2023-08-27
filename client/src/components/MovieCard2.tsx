@@ -27,13 +27,13 @@ const MovieCard2: React.FC<MovieCardProp2> = ({ movieId }) => {
   // onClick={() => redirectToMoviePage(movieId)}
   return (
     <Link to={`/movie/${movieId}`}>
-      <div className="flex bg-slate-700 bg-opacity-40 backdrop-blur-md border p-4 m-4">
+      <div className="flex flex-col sm:flex-row bg-slate-700 bg-opacity-40 backdrop-blur-md border p-4 m-4">
         <img
           src={`https://image.tmdb.org/t/p/w300${movieDetails?.poster_path}`}
           alt={`${movieDetails?.title} Poster`}
-          className="w-auto h-32 object-contain mr-4"
+          className="w-auto h-44 object-contain"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col sm:pl-4 pt-4">
           <h2 className="text-lg font-semibold text-white">{movieDetails?.title}</h2>
           <p className="mb-2 text-slate-300">{movieDetails?.overview}</p>
           <p className="text-gray-300">

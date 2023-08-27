@@ -17,6 +17,10 @@ export const CallToAction = styled.div`
   flex-wrap: nowrap;
   gap: 1rem; /* 16px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -133,7 +137,7 @@ export const Wrapper2 = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
   width: auto;
-  height: min-content; /* 498px */
+  height: auto; /* 498px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -147,6 +151,10 @@ export const Wrapper2 = styled.div`
   flex-wrap: nowrap;
   gap: 3.125rem; /* 50px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 export const Title2 = styled.div`
@@ -169,17 +177,23 @@ export const Title2 = styled.div`
   letter-spacing: 0em;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    max-width: fit-content;
+    padding-bottom: 0rem;
+  }
 `;
 
 export const InfoColumn = styled.div`
   flex-shrink: 0;
-  width: 1000px;
+  width: 100%;
   height: min-content; /* 190px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 1000px;
+  max-width: 62.5rem;
   overflow: visible;
   flex: 1 0 0px;
   position: relative;
@@ -188,6 +202,10 @@ export const InfoColumn = styled.div`
   flex-wrap: nowrap;
   gap: 3.125rem; /* 50px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 export const InfoRow1 = styled.div`
@@ -206,6 +224,10 @@ export const InfoRow1 = styled.div`
   flex-wrap: nowrap;
   gap: 2.5rem; /* 40px */
   border-radius: 0;
+
+  @media (max-width: 768px) {
+    gap: 0; /* Adjust gap for smaller screens */
+  }
 `;
 
 export const InfoRow2 = styled.div`
@@ -264,6 +286,10 @@ export const InfoSubRowsColumn = styled.div`
   border-bottom-width: 0.0625rem; /* 1px */
   border-left-width: 0;
   border-right-width: 0;
+
+  @media (max-width: 768px) {
+    
+  }
 `;
 
 export const Font2 = styled.div`
@@ -280,4 +306,9 @@ export const Font2 = styled.div`
   letter-spacing: 0;
   line-height: 1.5;
   text-align: left;
+
+  @media (max-width: 768px) {
+    width: min-content;
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 `;
