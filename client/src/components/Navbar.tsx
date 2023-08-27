@@ -57,30 +57,30 @@ const Navbar = () => {
         ></span>
       </button>
       {toggle && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 h-screen w-screen flex justify-center items-center z-50" onClick={() => toggleNav(!toggle)}>
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 h-screen w-screen flex justify-center items-center z-50 transition-opacity duration-300" onClick={() => toggleNav(!toggle)}>
           <ul className="text-white text-xl text-center">
             <li className="flex flex-col space-y-10">
               <a
                 href="/battle-ground"
-                className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+                className="text-[#e63946] text-3xl font-semibold font-mono hover:border-b-2  hover:border-[#e63946]"
               >
                 Battle Ground
               </a>
               <a
                 href="/preferred-movies"
-                className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+                className="block text-[#e63946] text-3xl font-semibold font-mono hover:border-b-2  hover:border-[#e63946]"
               >
                 What to watch
               </a>
               <a
                 href="/create-battle"
-                className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+                className="block text-[#e63946] text-3xl font-semibold font-mono hover:border-b-2  hover:border-[#e63946]"
               >
                 Create Battle's
               </a>
               <a
                 href="/arena"
-                className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+                className="block text-[#e63946] text-3xl font-semibold font-mono hover:border-b-2  hover:border-[#e63946]"
               >
                 Arena
               </a>
