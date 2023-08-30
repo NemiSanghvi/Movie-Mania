@@ -5,10 +5,7 @@ import { MovieDetailsPageType } from "../services/types";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
-  if (!id) {
-    return <div>This movie doesn't exist!</div>;
-  }
-  const movie_id = parseInt(id);
+  const movie_id = parseInt(id || "");
   const { data, isLoading, error } = useQuery([movie_id?.toString()], () =>
     getMovieDetails(movie_id)
   );

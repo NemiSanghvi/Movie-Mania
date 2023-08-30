@@ -12,25 +12,25 @@ const Navbar = () => {
         <li className="flex flex-row space-x-12">
           <a
             href="/battle-ground"
-            className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+            className="block text-[#e63946] text-xl font-mono hover:border-b-2  hover:border-[#e63946]"
           >
             Battle Ground
           </a>
           <a
             href="/preferred-movies"
-            className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+            className="block text-[#e63946] text-xl font-mono hover:border-b-2  hover:border-[#e63946]"
           >
             What to watch
           </a>
           <a
             href="/create-battle"
-            className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+            className="block text-[#e63946] text-xl font-mono hover:border-b-2  hover:border-[#e63946]"
           >
             Create Battle's
           </a>
           <a
             href="/arena"
-            className="block text-[#e63946] text-lg font-mono hover:border-b-2  hover:border-[#e63946]"
+            className="block text-[#e63946] text-xl font-mono hover:border-b-2  hover:border-[#e63946]"
           >
             Arena
           </a>
