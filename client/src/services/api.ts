@@ -18,7 +18,7 @@ const getRandomMovies = async (): Promise<Movie[]> => {
 const getMovieDetails = async (movie_id: number): Promise<MovieDetails[]> => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}&append_to_response=videos,credits,images`
     );
     const movieDetails = response.data;
     return movieDetails;

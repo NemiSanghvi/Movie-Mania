@@ -44,7 +44,28 @@ export interface MovieDetailsPageType {
   runtime: number;
   status: string;
   imdb_id: string;
+  videos: {
+    results: {
+      key: string;
+      name: string;
+      site: string;
+    }[];
+  };
+  credits: {
+    cast: {
+      id: number;
+      name: string;
+      character: string;
+      profile_path: string;
+    }[];
+  }
 }
+
+// export interface Video {
+//   key: string;
+//   name: string;
+//   site: string;
+// }
 
 export interface Battle {
   id:number;
