@@ -14,13 +14,19 @@ const CastCard: React.FC<CastCardProp> = ({ actor }) => {
   return (
     <>
       <div className="h-40 w-64 flex">
-        {actor.profile_path ? (<img
-          src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
-          alt={`${actor.name} Poster`}
-          className="w-28 h-40 rounded-full object-fit"
-        />) : (<img
-          src="https://via.placeholder.com/150" className="w-28 h-40 rounded-full object-fit"/> )}        
-        
+        {actor.profile_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+            alt={`${actor.name} Poster`}
+            className="w-28 h-40 rounded-full object-fit"
+          />
+        ) : (
+          <img
+            src="https://via.placeholder.com/150"
+            className="w-28 h-40 rounded-full object-fit"
+          />
+        )}
+
         <div className="flex flex-col justify-centre ml-4 mt-2">
           <p className="text-gray-300 text-lg font-bold mb-2">
             {actor.character}

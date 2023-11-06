@@ -6,9 +6,13 @@ import YouTube from "react-youtube";
 import CastCard from "../components/CastCard";
 import { useState } from "react";
 
+type Id = {
+  id: string;
+};
+
 const MovieDetailsPage = () => {
-  const { id } = useParams();
-  const movie_id = parseInt(id || "");
+  const { id } = useParams() as Id;
+  const movie_id = parseInt(id);
   const { data, isLoading, error } = useQuery([movie_id?.toString()], () =>
     getMovieDetails(movie_id)
   );
@@ -83,19 +87,19 @@ const MovieDetailsPage = () => {
             <p className="text-gray-300">No official trailer available</p>
           )}
         </div>
-        <div className="p-6">
+        <div className="p-2">
           <a
             rel="noopener noreferrer"
             target="_blank"
             href={`https://www.imdb.com/title/${movieData?.imdb_id}/`}
-            className="px-6 py-2 bg-gray-200 rounded-full text-center text-black text-lg text-bold block w-full lg:w-auto lg:inline-block"
+            className="px-5 py-2 bg-gray-200 rounded-full text-center text-black text-lg text-bold block w-full lg:w-auto lg:inline-block"
           >
             For Additional Info, Check out IMDB
           </a>
         </div>
       </div>
       {/* Movie Details Section */}
-      <div className="relative z-10 p-4 lg:p-6">
+      <div className="relative p-4 lg:p-6">
         <section className="mt-8">
           <div className="mt-4 lg:mt-0">
             <h1 className="text-3xl lg:text-4xl font-bold mb-2 text-center lg:text-left">
@@ -122,15 +126,16 @@ const MovieDetailsPage = () => {
             </div>
           ))}
         </div>
-        {displayCastCount < movieData.credits.cast.length && (
-          <button
-            onClick={showMoreCast}
-            type="button"
-            className="mt-4 px-4 py-2 bg-yellow-500 rounded-full text-center text-black text-lg font-bold cursor-pointer"
-          >
-            Show More Cast Members
-          </button>
-        )}
+        <div onClick={showMoreCast} className="w-fit">
+          {displayCastCount < movieData.credits.cast.length && (
+            <button
+              type="button"
+              className="mt-4 px-4 py-2 bg-yellow-500 rounded-full text-center text-black text-lg font-bold cursor-pointer"
+            >
+              Show More Cast Members
+            </button>
+          )}
+        </div>
       </section>
     </div>
   );

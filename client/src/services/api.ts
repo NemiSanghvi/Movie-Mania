@@ -43,6 +43,8 @@ const getBattles = async() => {
 
   return battles;
 } 
+
+
 const queryMovie = async (movieQuery: string) => {
   try {
     const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieQuery}`);

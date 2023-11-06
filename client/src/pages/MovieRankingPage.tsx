@@ -5,6 +5,7 @@ import { MovieID } from "../services/types";
 import "../App.css";
 import RankingPageLoading from "../components/loadingStyles/RankingPageLoading";
 import { motion } from "framer-motion";
+import ErrorIcon from "../assets/browser-error-404-icon.svg";
 
 const MovieRankingPage = () => {
   const {
@@ -35,7 +36,10 @@ const MovieRankingPage = () => {
           </motion.div>
         ))
       ) : (
-        <p>No movies found.</p>
+        <p className="w-20 h-20">
+          <img src={ErrorIcon} alt="" />
+          No movies found.
+        </p>
       )}
     </div>
   );
