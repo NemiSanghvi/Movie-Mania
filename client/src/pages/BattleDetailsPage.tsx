@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion"; // Import motion for animations
+import { motion } from "framer-motion"; 
 import { MovieDetailsPageType } from "../services/types";
 
 interface BattleDetails {
@@ -16,16 +16,21 @@ const BattleDetailsPage = () => {
   const [battleDetails, setBattleDetails] = useState<BattleDetails | null>(
     null
   );
-  const [movie1Details, setMovie1Details] =
-    useState<MovieDetailsPageType | null>(null);
-  const [movie2Details, setMovie2Details] =
-    useState<MovieDetailsPageType | null>(null);
+  const [movie1Details, setMovie1Details] = useState<MovieDetailsPageType | null>(
+    null
+  );
+  const [movie2Details, setMovie2Details] = useState<MovieDetailsPageType | null>(
+    null
+  );
 
-  if (!id) {
-    return <div>This battle doesn't exist!</div>;
+
+  let battle_id: number   = 0;
+
+
+  if(id) {
+    battle_id = parseInt(id);
   }
 
-  const battle_id = parseInt(id);
 
   const fetchMovieDetails = async (movieId: number) => {
     try {
@@ -39,27 +44,30 @@ const BattleDetailsPage = () => {
     }
   };
 
-  const battleInfo = async (battle_id: number) => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3030/api/battle-details/${battle_id}`
-      );
-      const data = response.data;
-      setBattleDetails(data.battleDetails);
-      if (data.battleDetails) {
-        const movie1 = await fetchMovieDetails(data.battleDetails.movie1Id);
-        const movie2 = await fetchMovieDetails(data.battleDetails.movie2Id);
-        setMovie1Details(movie1);
-        setMovie2Details(movie2);
-      }
-    } catch (error) {
-      console.error("Error fetching battle details:", error);
-    }
-  };
-
+  
   useEffect(() => {
-    battleInfo(battle_id);
-  }, []);
+    const battleInfo = async (battle_id: number) => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3030/api/battle-details/${battle_id}`
+        );
+        const data = response.data;
+        setBattleDetails(data.battleDetails);
+        if (data.battleDetails) {
+          const movie1 = await fetchMovieDetails(data.battleDetails.movie1Id);
+          const movie2 = await fetchMovieDetails(data.battleDetails.movie2Id);
+          setMovie1Details(movie1);
+          setMovie2Details(movie2);
+        }
+      } catch (error) {
+        console.error("Error fetching battle details:", error);
+      }
+    };
+    if (id) {
+      battleInfo(battle_id);
+    }
+  }, [id, battle_id]); 
+
 
   return (
     <div>
