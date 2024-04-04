@@ -29,7 +29,7 @@ const getMovieDetails = async (movie_id: number): Promise<MovieDetails[]> => {
 };
 
 const getMovieId = async () => {
-  const response = await axios.get("http://localhost:3030/api/movie");
+  const response = await axios.get("https://mm-server-dd9o.onrender.com/api/movie");
 
   const movieList = response.data;
 
@@ -37,7 +37,7 @@ const getMovieId = async () => {
 };
 
 const getBattles = async() => {
-  const response = await axios.get("http://localhost:3030/api/arena-battles");
+  const response = await axios.get("https://mm-server-dd9o.onrender.com/api/arena-battles");
 
   const battles = response.data;
 

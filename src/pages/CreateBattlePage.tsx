@@ -40,7 +40,7 @@ const CreateBattlePage: React.FC = () => {
   const publishBattle = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3030/api/create-battle",
+        "https://mm-server-dd9o.onrender.com/api/create-battle",
         {
           movie1Id: selectedMovie1?.id,
           movie2Id: selectedMovie2?.id,

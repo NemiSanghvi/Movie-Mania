@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import CreateBattlePage from "./pages/CreateBattlePage";
 import BattleArenaPage from "./pages/BattleArenaPage";
 import BattleDetailsPage from "./pages/BattleDetailsPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/create-battle" element={<CreateBattlePage />} />
           <Route path="/arena" element={<BattleArenaPage />} />
           <Route path="/arena/battle/:id" element={<BattleDetailsPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
         <Footer />
       </Router>

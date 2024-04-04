@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"; 
 import { MovieDetailsPageType } from "../services/types";
+import CommentSection from "../components/CommentSection";
 
 interface BattleDetails {
   movie1Id: number;
@@ -49,7 +50,7 @@ const BattleDetailsPage = () => {
     const battleInfo = async (battle_id: number) => {
       try {
         const response = await axios.get(
-          `http://localhost:3030/api/battle-details/${battle_id}`
+          `https://mm-server-dd9o.onrender.com/api/battle-details/${battle_id}`
         );
         const data = response.data;
         setBattleDetails(data.battleDetails);
@@ -112,6 +113,8 @@ const BattleDetailsPage = () => {
       ) : (
         <div className="text-center py-8">Loading...</div>
       )}
+
+      <CommentSection />
     </div>
   );
 };
