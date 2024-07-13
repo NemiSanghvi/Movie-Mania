@@ -3,6 +3,7 @@
 Welcome to Movie Mania, a web application that lets users vote on their favorite movies and create battles between movies to determine which one is preferred by the community.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -30,7 +31,7 @@ To get started with Movie Mania, follow these steps:
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/RaiYashPramod/movie-mania.git](https://github.com/RaiYashPramod/MM_Client.git)
+   git clone https://github.com/NemiSanghvi/Movie-Mania.git](.git)
    ```
 
 2. Install the required dependencies:
@@ -51,10 +52,12 @@ To get started with Movie Mania, follow these steps:
 ## Usage
 
 1. **Vote for Movies**:
+
    - On the movie battle page, you will be presented with two random movie options.
    - Click on your preferred movie to vote for it. The chosen movie receives a +8 rating, and the other movie receives a -8 rating.
 
 2. **Create Movie Battles**:
+
    - Navigate to the "Battles Royale" section of the application.
    - Click on the "Create Battle" button.
    - Select two movies that you want to create a battle for.
@@ -62,6 +65,7 @@ To get started with Movie Mania, follow these steps:
    - Click "Publish" to create the battle.
 
 3. **Vote on Battles**:
+
    - Browse the list of published battles in the "Battles" section.
    - Click on a battle to view details.
    - Vote for your preferred movie in the battle.
@@ -85,5 +89,4 @@ While Movie Mania is already an exciting platform for movie enthusiasts, there a
 
 Contributions to Movie Mania are welcome! If you have ideas for improvements, bug fixes, or new features, feel free to open an issue or submit a pull request.
 
-For questions, suggestions, or to discuss potential contributions, you can reach out to the project maintainers via email: raiyashpramod16@gmail.com
-
+For questions, suggestions, or to discuss potential contributions, you can reach out to the project maintainers via email: nemisanghvi009@gmail.com

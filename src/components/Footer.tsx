@@ -1,5 +1,9 @@
-import { CopyWrite, FooterBg, Font3 } from "./styledComponents/FooterStyleComponent";
-import githubIcon from '../assets/github.svg'
+import {
+  CopyWrite,
+  FooterBg,
+  Font3,
+} from "./styledComponents/FooterStyleComponent";
+import githubIcon from "../assets/github.svg";
 
 const Footer = () => {
   return (
@@ -13,7 +17,13 @@ const Footer = () => {
               Open source project. Feel free to contribute.
             </span>
           </Font3>{" "}
-          <a href="https://github.com/RaiYashPramod/MM_Client" rel="noreffer noopenner" target="_blank"><img src={githubIcon} alt="GITHUB"/></a>
+          <a
+            href="https://github.com/NemiSanghvi"
+            rel="noreffer noopenner"
+            target="_blank"
+          >
+            <img src={githubIcon} alt="GITHUB" />
+          </a>
         </CopyWrite>
       </FooterBg>
     </>
